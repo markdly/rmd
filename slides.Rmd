@@ -53,11 +53,11 @@ class: inverse, center, middle
 
  - Smaller processing tasks (short-example.Rmd)
  
- - Larger more involved reports (e.g. tech reports / thesis / publications) containing charts, tables, references
+ - Larger more involved reports (e.g. tech reports / thesis / publications) containing charts, tables, references. E.g. see https://bookdown.org/yihui/bookdown/
  
  - Interactive reports https://github.com/LCisannoyed/ShinyExample
  
- - Websites https://markdly.github.io/arc/
+ - Websites https://markdly.github.io/reviewr
  
  - ...
 
