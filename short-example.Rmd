@@ -1,39 +1,26 @@
 ---
-title: "short-report"
-author: "markdly"
-date: "21 March 2018"
+title: "Star Wars characters R Markdown demo"
+author: "Mark Dulhunty"
+date: "`r Sys.Date()`"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Short report example: Initial descriptive stats for an educational assessment dataset
+## Short demo
 
-For this example we are going to use a dataset that comes with the `conquestr` package available on github. It can be installed as follows:
-
-```{r install_conquestr, eval=FALSE}
-# install.packages("devtools")
-devtools::install_github("markdly/conquestr")
-```
-
-After installing we can access the inbuilt data (alternatively you could read in a csv file here etc)
-```{r datasets}
+```{r initialise, include=FALSE}
 library(DT)
-library(conquestr)
-resp <- conquestr::short_test
+library(tidyverse)
+data(starwars)
+df <- starwars %>% select(name, height, mass, homeworld, species)
 ```
 
-Student responses to item are stored in `resp`. Here are the first 8 records:
+The interactive table below contains information about `r nrow(df)` different Star Wars characters. 
 
 ```{r resp_table, echo=FALSE}
-#knitr::kable(head(resp))
-DT::datatable(
-  head(resp, 8),
-  fillContainer = FALSE, options = list(pageLength = 5)
-)
+DT::datatable(df, fillContainer = FALSE, options = list(pageLength = 5))
 ```
-
-There are a total of `r nrow(resp)` cases. 
 
